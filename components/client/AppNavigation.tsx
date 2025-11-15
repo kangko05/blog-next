@@ -16,8 +16,8 @@ import { usePathname } from "next/navigation";
 const components = [
   { title: "Home", url: "/" },
   { title: "About", url: "/about" },
-  { title: "Notes", url: "#" },
-  { title: "Projects", url: "#" },
+  { title: "Notes", url: "/notes" },
+  { title: "Projects", url: "/projects" },
 ];
 
 function useActiveLinkStyle() {
@@ -44,10 +44,7 @@ function AppNavigationMenuPc() {
       <NavigationMenuList className="flex-wrap">
         {components.map((comp) => (
           <NavigationMenuItem key={comp.title}>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
               <Link href={comp.url} className={getLinkStyle(comp.url)}>
                 {comp.title}
               </Link>
@@ -68,10 +65,7 @@ function AppNavigationMenuMobile({
 
   return (
     <div className="fixed inset-0 z-10 bg-card">
-      <X
-        className="absolute right-4 top-4 text-muted-50"
-        onClick={() => setShowNaviMenu(false)}
-      />
+      <X className="absolute right-4 top-4 text-muted-50" onClick={() => setShowNaviMenu(false)} />
 
       <div className="flex h-full flex-col items-center justify-center gap-10">
         {components.map((cmp) => (
@@ -100,9 +94,7 @@ export function AppNavigation() {
           <Menu onClick={() => setShowNaviMenu(!showNaviMenu)} />
           <DarkModeButton />
         </div>
-        {showNaviMenu && (
-          <AppNavigationMenuMobile setShowNaviMenu={setShowNaviMenu} />
-        )}
+        {showNaviMenu && <AppNavigationMenuMobile setShowNaviMenu={setShowNaviMenu} />}
       </header>
 
       {/* desktop */}
