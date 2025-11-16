@@ -1,15 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { extractDescription, formatDate } from "@/lib/utils";
-
-export type Tpost = {
-  id: number;
-  title: string;
-  content: string;
-  category: "notes" | "projects" | "proj";
-  tags: string[];
-  created_at?: string;
-};
+import { Tpost } from "@/lib/types";
 
 export function PostCard({ id, title, category, content, tags, created_at }: Tpost) {
   return (

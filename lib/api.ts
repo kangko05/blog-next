@@ -1,4 +1,4 @@
-import { Tpost } from "@/components/server/PostCard";
+import { Tpost } from "./types";
 
 const BASE_URL = "http://localhost:8000";
 

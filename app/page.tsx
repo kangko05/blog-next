@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
-import { PostCard, Tpost } from "@/components/server/PostCard";
+import { PostCard } from "@/components/server/PostCard";
 import { getRecentPosts } from "@/lib/api";
+import { Tpost } from "@/lib/types";
 
 const RECENT_POSTS_LIMIT = 5;
 

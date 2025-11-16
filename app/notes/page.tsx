@@ -1,6 +1,7 @@
-import { PostCard, Tpost } from "@/components/server/PostCard";
+import { PostCard } from "@/components/server/PostCard";
 import { PageTitle } from "@/components/server/PageTitle";
 import { getNotes } from "@/lib/api";
+import { Tpost } from "@/lib/types";
 
 export default async function Notes() {
   const t = await getNotes();
