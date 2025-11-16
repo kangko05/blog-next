@@ -1,6 +1,7 @@
 // this page contains a hardcoded information
 
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 const teckStacks = {
   frontend: ["React", "Next.js", "TypeScript", "shadcn/ui", "Tailwind CSS"],
@@ -17,6 +18,8 @@ export default function About() {
           프론트엔드 중심으로 웹 서비스를 만들고 있습니다.
         </p>
       </header>
+
+      <Separator className="w-full max-w-5xl" />
 
       {/* Tech Stack */}
       <section className="space-y-4">
@@ -44,6 +47,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <Separator className="w-full max-w-5xl" />
 
       {/* Contact */}
       <section className="space-y-4">
