@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppNavigation } from "@/components/client/AppNavigation";
 
+// export const dynamic = "force-dynamic";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -38,7 +42,9 @@ export default function RootLayout({
           <div className="min-h-dvh flex flex-col">
             <AppNavigation />
             <main className="flex-1 w-full md:max-w-7xl mx-auto p-4 md:p-6">
-              <section className="w-full text-foreground p-5">{children}</section>
+              <section className="w-full text-foreground p-5">
+                {children}
+              </section>
             </main>
           </div>
         </ThemeProvider>

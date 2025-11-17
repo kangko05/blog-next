@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 
 const teckStacks = {
   frontend: ["React", "Next.js", "TypeScript", "shadcn/ui", "Tailwind CSS"],
-  backend: ["Go", "Gin", "PostgreSQL", "SQLite", "REST APIs"],
+  backend: ["NestJs", "Go", "Gin", "PostgreSQL", "SQLite", "REST APIs"],
 };
 
 export default function About() {
@@ -15,7 +15,10 @@ export default function About() {
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">About</h1>
         <p className="text-sm text-muted-foreground">
-          프론트엔드 중심으로 웹 서비스를 만들고 있습니다.
+          안녕하세요. <br /> 작은 프로젝트를 직접 만들고 운영하며 배우는 것을
+          좋아하는 개발자 강경오입니다. <br /> 새로운 기술을 빠르게 익히고, 동작
+          원리를 이해하는 데 관심이 많습니다. <br /> 필요한 건 직접 만들어보고,
+          실사용 환경에서 검증하는 스타일입니다.
         </p>
       </header>
 
@@ -26,7 +29,9 @@ export default function About() {
         <h2 className="text-lg font-semibold">Tech Stack</h2>
 
         <div className="space-y-3">
-          <h3 className="text-xs font-medium uppercase text-muted-foreground">Frontend</h3>
+          <h3 className="text-xs font-medium uppercase text-muted-foreground">
+            Frontend
+          </h3>
           <div className="flex flex-wrap gap-2">
             {teckStacks.frontend.map((it) => (
               <Badge key={it} variant="outline">
@@ -37,7 +42,9 @@ export default function About() {
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-xs font-medium uppercase text-muted-foreground">Backend</h3>
+          <h3 className="text-xs font-medium uppercase text-muted-foreground">
+            Backend
+          </h3>
           <div className="flex flex-wrap gap-2">
             {teckStacks.backend.map((it) => (
               <Badge key={it} variant="outline">
