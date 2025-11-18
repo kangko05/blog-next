@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# blog-next
 
-## Getting Started
+A personal blog frontend rebuilt with Next.js 16 (app router), migrating from a previous React SPA implementation.
+The main goal of this project was to achieve better performance overall.
 
-First, run the development server:
+**Live**: [https://kangko.org](https://kangko.org)
+**Backend Repository** https://github.com/kangko05/blog-go
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Tech Stack
+
+**Frontend**
+- Next.js 16 (App Router)
+- Typescript
+- TailwindCSS
+- Shadcn ui
+
+**Backend**
+- Go (Gin)
+- Sqlite
+
+# Performance Comparison
+
+measured using lighthouse (3 runs per page)
+
+## Mobile
+
+```
+| Page     | SPA FCP | SPA LCP | Next FCP | Next LCP |
+|----------|---------|---------|----------|----------|
+| Home     | 3.8s    | 3.9s    | 0.9s     | 2.3s     |
+| Notes    | 3.8s    | 3.8s    | 0.9s     | 2.0s     |
+| Projects | 3.8s    | 3.8s    | 0.9s     | 2.1s     |
+| About    | 3.8s    | 3.8s    | 0.9s     | 2.0s     |
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desktop
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+| Page     | SPA FCP | SPA LCP | Next FCP | Next LCP |
+|----------|---------|---------|----------|----------|
+| Home     | 0.7s    | 0.7s    | 0.2s     | 0.4s     |
+| Notes    | 0.7s    | 0.7s    | 0.2s     | 0.4s     |
+| Projects | 0.7s    | 0.7s    | 0.2s     | 0.4s     |
+| About    | 0.7s    | 0.7s    | 0.2s     | 0.4s     |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+## Conclusion
 
-To learn more about Next.js, take a look at the following resources:
+achieved around 3~4 times faster performance across both mobile and desktop.
+additionally SEO and Accessability scores improved, as measured by lighthouse.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+  about/
+  notes/
+  projects/
+  layout.tsx
+  page.tsx
+components/
+  client/
+  server/
+  ui/ # shadcn ui components
+lib/
+  api.ts
+  types.ts
+```
